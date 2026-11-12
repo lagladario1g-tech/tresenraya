@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRES EN RAYA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+
+    <header class="bg-danger">
+        <div class="row ">
+            <div class="col-12 text-center">
+                <h1>JUEGO 3 EN LINEA</h1>
+            </div>
+        </div>
+    </header>
+    <!--INGRESAR JGUADORES-->
+    <section >
+        <div class="container container-lg  ">
+            <!--JUGADOR 1-->
+            <div class="row bg-primary text-white rounded m-4 p-4">
+                <div class="col-3 bg-white " >
+                    <img src="img/equis.png" alt="imagen de la equis" width="50" height="100">
+                </div>
+                <div class="col-9">
+                    <label for="nombre">Escribe el nombre del primer jugador :</label>
+                    <input type="text" id="nombre" placeholder="JUGADOR 1">
+                    
+                </div>
+            </div>
+            <!--JUGADOR 2-->
+            <div class="row bg-danger text-white rounded m-4 p-4  ">
+                <div class="col-3 bg-white  " >
+                    <img class="" src="img/circulo.png" alt="imagen del circulo" width="50" height="100">
+                </div>
+                <div class="col-9">
+                    <label for="nombre">Escribe el nombre del segundo jugador:</label>
+                    <input type="text" id="nombre" placeholder="JUGADOR 2">
+                    
+                </div>
+            </div>
+        </div>
+        <!--BOTON-->
+        <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-success">INICIAR JUEGO</button>
+        </div>
+
+    <!--TURNOS-->
+    </section>
+        
+
+    </section>
+    <!--TABLERO TRES EN RAYA Y JUEGO-->
+    <main>
+         <div class="p-4 m-5 rounded-3" style="background-color: #6F4E37; width: fit-content;">
+            <table class="table table-bordered border-3 border-dark text-center align-middle mb-0" style="table-layout: fixed; width: 300px; height: 300px; font-size: 3rem;">
+                <tbody>
+                <tr>
+                    <td style="width: 100px; height: 100px;">
+                        <img id="1"class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
+                    </td>
+                    <td style="width: 100px; height: 100px;">
+                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
+                    </td>
+                    
+                    <td style="width: 100px; height: 100px;">
+                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 100px; height: 100px;">
+                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
+                    </td>
+                    <td style="width: 100px; height: 100px;">
+                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
+                    </td>
+                    <td style="width: 100px; height: 100px;">
+                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 100px; height: 100px;">
+                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
+                    </td>
+                    <td style="width: 100px; height: 100px;">
+                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
+                    </td>
+                    <td style="width: 100px; height: 100px;">
+                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+    </main>
+    <script>
+        // 1. Seleccionamos la imagen por su ID
+        const imagen = document.getElementById("1");
+
+        // 2. Definimos las rutas de las imágenes
+        const imagenUno = "cuadrado.jpg";
+        const imagenDos = "equis.png";
+
+        // 3. Agregamos un escuchador de eventos para cuando se haga clic
+        imagen.addEventListener("click", () => {
+        // Comprobamos cuál es la imagen actual y cambiamos a la otra
+        if (imagen.src.includes(imagenUno)) {
+            imagen.src = imagenDos;
+        } else {
+            imagen.src = imagenUno;
+        }
+        });
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+</body>
+</html>
