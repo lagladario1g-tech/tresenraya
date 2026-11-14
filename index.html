@@ -1,116 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRES EN RAYA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+</head>
+<body class="min-vh-100" style="background: linear-gradient(135deg, #fff7e6 0%, #ffd9d9 50%, #d6e6ff 100%) fixed; font-family: 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;">
 
-    <header class="bg-danger">
-        <div class="row ">
-            <div class="col-12 text-center">
-                <h1>JUEGO 3 EN LINEA</h1>
+    <!--TITULO-->
+    <header class="bg-danger text-white shadow py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-5 fw-bolder text-uppercase mb-1" style="letter-spacing: .2rem; text-shadow: 2px 2px 0 rgba(0,0,0,.25);">JUEGO 3 EN LINEA</h1>
+                    <p class="mb-0 fst-italic text-white-50">¡Alinea tres para ganar!</p>
+                </div>
             </div>
         </div>
     </header>
-    <!--INGRESAR JGUADORES-->
-    <section >
-        <div class="container container-lg  ">
+
+    <!--INGRESAR JUGADORES-->
+    <section class="container my-4">
+        <div class="row g-3 justify-content-center">
             <!--JUGADOR 1-->
-            <div class="row bg-primary text-white rounded m-4 p-4">
-                <div class="col-3 bg-white " >
-                    <img src="img/equis.png" alt="imagen de la equis" width="50" height="100">
-                </div>
-                <div class="col-9">
-                    <label for="nombre">Escribe el nombre del primer jugador :</label>
-                    <input type="text" id="nombre" placeholder="JUGADOR 1">
-                    
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="row g-0 align-items-center bg-primary text-white rounded-4 shadow p-3 h-100">
+                    <div class="col-3 col-sm-2 col-md-3 bg-white rounded-3 p-2 text-center">
+                        <img class="img-fluid" src="img/equis.png" alt="imagen de la equis">
+                    </div>
+                    <div class="col-9 col-sm-10 col-md-9 ps-3">
+                        <label for="nombre1" class="form-label fw-bold text-uppercase small" style="letter-spacing: .08rem;">Nombre del primer jugador</label>
+                        <input type="text" id="nombre1" class="form-control fw-semibold" placeholder="JUGADOR 1">
+                    </div>
                 </div>
             </div>
             <!--JUGADOR 2-->
-            <div class="row bg-danger text-white rounded m-4 p-4  ">
-                <div class="col-3 bg-white  " >
-                    <img class="" src="img/circulo.png" alt="imagen del circulo" width="50" height="100">
-                </div>
-                <div class="col-9">
-                    <label for="nombre">Escribe el nombre del segundo jugador:</label>
-                    <input type="text" id="nombre" placeholder="JUGADOR 2">
-                    
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="row g-0 align-items-center bg-danger text-white rounded-4 shadow p-3 h-100">
+                    <div class="col-3 col-sm-2 col-md-3 bg-white rounded-3 p-2 text-center">
+                        <img class="img-fluid" src="img/circulo.png" alt="imagen del circulo">
+                    </div>
+                    <div class="col-9 col-sm-10 col-md-9 ps-3">
+                        <label for="nombre2" class="form-label fw-bold text-uppercase small" style="letter-spacing: .08rem;">Nombre del segundo jugador</label>
+                        <input type="text" id="nombre2" class="form-control fw-semibold" placeholder="JUGADOR 2">
+                    </div>
                 </div>
             </div>
         </div>
         <!--BOTON-->
-        <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-success">INICIAR JUEGO</button>
+        <div class="d-flex justify-content-center mt-4">
+            <button type="button" id="btnIniciar" class="btn btn-success btn-lg px-5 rounded-pill shadow fw-bolder text-uppercase" style="letter-spacing: .1rem;">Iniciar juego</button>
         </div>
+    </section>
 
     <!--TURNOS-->
+    <section class="container text-center">
+        <div class="bg-white rounded-4 shadow-sm py-3 px-2 d-inline-block w-100" style="max-width: 420px;">
+            <p class="text-muted mb-2 small text-uppercase fw-bold" style="letter-spacing: .2rem;">Turno de</p>
+            <h3 class="mb-0"><span id="turno" class="badge rounded-pill fs-4 px-4 py-2 text-wrap bg-primary">JUGADOR 1</span></h3>
+        </div>
     </section>
-        
 
-    </section>
     <!--TABLERO TRES EN RAYA Y JUEGO-->
-    <main>
-         <div class="p-4 m-5 rounded-3" style="background-color: #6F4E37; width: fit-content;">
-            <table class="table table-bordered border-3 border-dark text-center align-middle mb-0" style="table-layout: fixed; width: 300px; height: 300px; font-size: 3rem;">
+    <main class="container d-flex justify-content-center my-4">
+        <div class="p-3 p-sm-4 rounded-4 shadow w-100" style="background-color: #6F4E37; max-width: 380px;">
+            <table class="table table-bordered border-3 border-dark text-center align-middle mb-0 bg-white w-100" style="table-layout: fixed;">
                 <tbody>
                 <tr>
-                    <td style="width: 100px; height: 100px;">
-                        <img id="1"class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
-                    </td>
-                    <td style="width: 100px; height: 100px;">
-                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
-                    </td>
-                    
-                    <td style="width: 100px; height: 100px;">
-                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
-                    </td>
+                    <td class="p-1"><img id="c0" class="img-fluid w-100" src="img/cuadrado.jpg" alt="casilla"></td>
+                    <td class="p-1"><img id="c1" class="img-fluid w-100" src="img/cuadrado.jpg" alt="casilla"></td>
+                    <td class="p-1"><img id="c2" class="img-fluid w-100" src="img/cuadrado.jpg" alt="casilla"></td>
                 </tr>
                 <tr>
-                    <td style="width: 100px; height: 100px;">
-                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
-                    </td>
-                    <td style="width: 100px; height: 100px;">
-                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
-                    </td>
-                    <td style="width: 100px; height: 100px;">
-                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
-                    </td>
+                    <td class="p-1"><img id="c3" class="img-fluid w-100" src="img/cuadrado.jpg" alt="casilla"></td>
+                    <td class="p-1"><img id="c4" class="img-fluid w-100" src="img/cuadrado.jpg" alt="casilla"></td>
+                    <td class="p-1"><img id="c5" class="img-fluid w-100" src="img/cuadrado.jpg" alt="casilla"></td>
                 </tr>
                 <tr>
-                    <td style="width: 100px; height: 100px;">
-                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
-                    </td>
-                    <td style="width: 100px; height: 100px;">
-                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
-                    </td>
-                    <td style="width: 100px; height: 100px;">
-                        <img class="" src="img/cuadrado.jpg" alt="imagen del circulo" width="50" height="100">
-                    </td>
+                    <td class="p-1"><img id="c6" class="img-fluid w-100" src="img/cuadrado.jpg" alt="casilla"></td>
+                    <td class="p-1"><img id="c7" class="img-fluid w-100" src="img/cuadrado.jpg" alt="casilla"></td>
+                    <td class="p-1"><img id="c8" class="img-fluid w-100" src="img/cuadrado.jpg" alt="casilla"></td>
                 </tr>
                 </tbody>
             </table>
-            </div>
+        </div>
     </main>
+
     <script>
-        // 1. Seleccionamos la imagen por su ID
-        const imagen = document.getElementById("1");
+        // ====== IMAGENES ======
+        const imgVacio  = "img/cuadrado.jpg";
+        const imgEquis  = "img/equis.png";
+        const imgCirculo = "img/circulo.png";
 
-        // 2. Definimos las rutas de las imágenes
-        const imagenUno = "cuadrado.jpg";
-        const imagenDos = "equis.png";
+        // ====== ESTADO DEL JUEGO ======
+        // Matriz 3x3: null = vacío, "X" o "O" = jugada
+        let tablero = [
+            [null, null, null],
+            [null, null, null],
+            [null, null, null]
+        ];
 
-        // 3. Agregamos un escuchador de eventos para cuando se haga clic
-        imagen.addEventListener("click", () => {
-        // Comprobamos cuál es la imagen actual y cambiamos a la otra
-        if (imagen.src.includes(imagenUno)) {
-            imagen.src = imagenDos;
-        } else {
-            imagen.src = imagenUno;
-        }
+        let nombres = ["JUGADOR 1", "JUGADOR 2"];
+        let turnoActual = 0;          // 0 = jugador 1 (X), 1 = jugador 2 (O)
+        let juegoTerminado = false;
+        const simbolos = ["X", "O"];
+        const imagenes = [imgEquis, imgCirculo];
+        const claseBadge = "badge rounded-pill fs-4 px-4 py-2 text-wrap ";
+
+        // ====== ELEMENTOS ======
+        const spanTurno = document.getElementById("turno");
+        const btnIniciar = document.getElementById("btnIniciar");
+
+        // ====== INICIAR JUEGO ======
+        btnIniciar.addEventListener("click", () => {
+            nombres[0] = document.getElementById("nombre1").value || "JUGADOR 1";
+            nombres[1] = document.getElementById("nombre2").value || "JUGADOR 2";
+            reiniciar();
         });
 
+        function reiniciar() {
+            tablero = [
+                [null, null, null],
+                [null, null, null],
+                [null, null, null]
+            ];
+            turnoActual = 0;          // siempre empieza el jugador 1
+            juegoTerminado = false;
+            for (let i = 0; i < 9; i++) {
+                document.getElementById("c" + i).src = imgVacio;
+            }
+            mostrarTurno();
+        }
 
+        function mostrarTurno() {
+            spanTurno.textContent = nombres[turnoActual];
+            spanTurno.className = claseBadge + (turnoActual === 0 ? "bg-primary" : "bg-danger");
+        }
+
+        // ====== CLICK EN CASILLAS ======
+        for (let i = 0; i < 9; i++) {
+            document.getElementById("c" + i).style.cursor = "pointer";
+            document.getElementById("c" + i).addEventListener("click", () => jugar(i));
+        }
+
+        function jugar(indice) {
+            const fila = Math.floor(indice / 3);
+            const col = indice % 3;
+
+            if (juegoTerminado) return;              // ya hay ganador
+            if (tablero[fila][col] !== null) return; // casilla ocupada
+
+            // Guardar en la matriz y cambiar la imagen
+            tablero[fila][col] = simbolos[turnoActual];
+            document.getElementById("c" + indice).src = imagenes[turnoActual];
+
+            if (hayGanador(simbolos[turnoActual])) {
+                juegoTerminado = true;
+                spanTurno.textContent = "¡Ganó " + nombres[turnoActual] + "!";
+                spanTurno.className = claseBadge + "bg-success";
+                return;
+            }
+
+            // Cambiar turno
+            turnoActual = turnoActual === 0 ? 1 : 0;
+            mostrarTurno();
+        }
+
+        // ====== COMPROBAR GANADOR ======
+        function hayGanador(s) {
+            // Horizontales
+            for (let f = 0; f < 3; f++) {
+                if (tablero[f][0] === s && tablero[f][1] === s && tablero[f][2] === s) return true;
+            }
+            // Verticales
+            for (let c = 0; c < 3; c++) {
+                if (tablero[0][c] === s && tablero[1][c] === s && tablero[2][c] === s) return true;
+            }
+            // Diagonales
+            if (tablero[0][0] === s && tablero[1][1] === s && tablero[2][2] === s) return true;
+            if (tablero[0][2] === s && tablero[1][1] === s && tablero[2][0] === s) return true;
+
+            return false;
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
 </body>
